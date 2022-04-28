@@ -1,7 +1,13 @@
-# Express REST API example
+# Github Actions example to integrate with GCP
 
-This example demonstrates how you can create tests on an [Express](https://expressjs.com) application using Mocha.js. Express is used to create a server and supertest is used for HTTP assertions inside the Mocha test runner. 
+In this example we are demonstrating a workflow where we will be doing the following using GitHub Actions
 
-## Commands
-- No config file is needed for Mocha as the app uses default values
-- `npm test` - run the mocha test code 
+1. Build a container using Google Cloud Build.
+
+2. Run unit tests on the container.
+
+3. If the unit tests is successful, then create an image and publish it to Artifact Registry
+
+4. Authenticate with a GKE Cluster
+
+5. Deploy the image from the Artifact Registry into the GKE Cluster
