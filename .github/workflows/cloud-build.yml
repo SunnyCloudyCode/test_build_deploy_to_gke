@@ -17,9 +17,6 @@ name: Build using Cloud Build
 on:
   pull_request:
     types: [opened, reopened]
-  push:
-    branches:
-    - 'main'
 
 env:
   PROJECT_ID: ${{ secrets.RUN_PROJECT }}
