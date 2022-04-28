@@ -59,4 +59,4 @@ jobs:
       with:
         message: |
           All tests pass and image built successfully ! :+1:
-        GITHUB_TOKEN: ${{ secrets.PR_TOKEN }}
+        GITHUB_TOKEN: $GITHUB_TOKEN
