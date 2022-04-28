@@ -7,6 +7,6 @@ describe('GET /', function() {
       .get('/')
       .expect(200)
       .expect('Content-Type',/json/)
-      .expect('{"text":"some json"}')
+      .expect('{"text":"some xml"}')
   })
 })
