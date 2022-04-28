@@ -1,3 +1,5 @@
+[![Build using Cloud Build](https://github.com/ksprashu/test_build_deploy_to_gke/actions/workflows/cloud-build.yml/badge.svg?branch=main&event=push)](https://github.com/ksprashu/test_build_deploy_to_gke/actions/workflows/cloud-build.yml)
+
 # Github Actions example to integrate with GCP
 
 In this example we are demonstrating a workflow where we will be doing the following using GitHub Actions
