@@ -29,8 +29,8 @@ env:
   IMAGE: tdd-basics
 
 jobs:
-  gke-deploy:
-    name: Deploy to GKE
+  setup-build-deploy:
+    name: Setup, Build, and Deploy
     runs-on: ubuntu-latest
     environment: production
 
@@ -54,11 +54,11 @@ jobs:
       uses: google-github-actions/setup-gcloud@v0
 
     # Build and push image to Google Container Registry
-    # - name: Build
-    #   run: |-
-    #     gcloud builds submit \
-    #       --quiet \
-    #       --tag "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA"
+    - name: Build
+      run: |-
+        gcloud builds submit \
+          --quiet \
+          --tag "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA"
 
     # Get the GKE credentials so we can deploy to the cluster
     - name: Set up GKE credentials

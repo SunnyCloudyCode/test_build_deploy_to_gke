@@ -21,12 +21,6 @@ on:
 env:
   PROJECT_ID: ${{ secrets.RUN_PROJECT }}
   SERVICE_NAME: tdd-basics
-  GAR_LOCATION: us-central1
-  GKE_CLUSTER: dev-cluster
-  GKE_ZONE: us-central1
-  DEPLOYMENT_NAME: tdd-basics-dev
-  REPOSITORY: my-docker-repo
-  IMAGE: tdd-basics  
 
 jobs:
   setup-build-deploy:
@@ -58,7 +52,7 @@ jobs:
       run: |-
         gcloud builds submit \
           --quiet \
-          --tag "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA"
+          --tag "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA"
 
     - name: Comment PR
       uses: thollander/actions-comment-pull-request@v1
