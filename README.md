@@ -15,4 +15,3 @@ In this example we are demonstrating a workflow where we will be doing the follo
 5. Deploy the image from the Artifact Registry into the GKE Cluster
 
 Changelist:
-
