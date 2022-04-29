@@ -29,8 +29,8 @@ env:
   IMAGE: tdd-basics
 
 jobs:
-  setup-build-deploy:
-    name: Setup, Build, and Deploy
+  gke-deploy:
+    name: Deploy to GKE
     runs-on: ubuntu-latest
     environment: production
 
@@ -40,8 +40,8 @@ jobs:
       id-token: 'write'
 
     steps:
-    # - name: Checkout
-    #   uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v3
 
     # Alternative option - authentication via credentials json
     - id: 'auth'
